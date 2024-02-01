@@ -5,7 +5,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {container:{padding: '5rem'}},
+    extend: {container:{
+      paddingLeft: '5rem',
+      paddingRight: '7rem'
+     }},
   },
   plugins: [],
 }

@@ -15,7 +15,9 @@ function App() {
           <Header />
           <Hero />
           <Skills />
+          <div className="w-full h-[1px] bg-gray-300 my-4"></div>
           <Profile />
+          <div className="w-full h-[1px] bg-gray-300 my-4"></div>
           <Projects />
       </div>
           <Footer />

@@ -9,13 +9,15 @@ import './App.css'
 
 function App() {
   return (
-        <div>
+    <div className="w-full h-screen">
+      <div className='container mx-auto '>
           <ModeSwitch />
           <Header />
           <Hero />
           <Skills />
           <Profile />
           <Projects />
+      </div>
           <Footer />
         </div>
   )

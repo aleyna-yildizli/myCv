@@ -3,8 +3,8 @@ import { BiSolidHandRight } from "react-icons/bi";
 
 export default function Footer () {
     return (
-        <div className="w-full h-[309px] bg-slate-100 ">
-            <div className="mx-auto w-full container ">
+        <div className="bg-slate-100 ">
+            <div className="mx-auto h-[251px]">
                 <div className="flex flex-col gap-2 justify-center p-[60px]">
                     <span className="text-3xl font-semibold">Let's work together on</span>
                     <span className="text-3xl font-semibold">your next product.</span>

@@ -6,8 +6,8 @@ export default {
   ],
   theme: {
     extend: {container: {
-      paddingLeft: '5rem',
-      paddingRight: '7rem'
+      paddingLeft: '7rem',
+      paddingRight: '10rem'
      }},
   },
   plugins: [],

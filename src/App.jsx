@@ -4,24 +4,25 @@ import Projects from './components/Projects/Projects';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Skills from './components/Skills/Skills';
-import ModeSwitch from './components/ModeSwitch/ModeSwitch';
+
 import './App.css'
 
 function App() {
   return (
     <div className="w-full h-screen">
-      <div className='container mx-auto '>
-          <ModeSwitch />
-          <Header />
-          <Hero />
-          <Skills />
-          <div className="w-full h-[1px] bg-gray-300 my-4"></div>
-          <Profile />
-          <div className="w-full h-[1px] bg-gray-300 my-4"></div>
-          <Projects />
-      </div>
-          <Footer />
-        </div>
+    <div className="container mx-auto">
+      <Header />
+      <Hero />
+      <Skills />
+      <div className="w-full h-[1px] bg-gray-300 my-4"></div>
+      <Profile />
+      <div className="w-full h-[1px] bg-gray-300 my-4"></div>
+      <Projects />
+      <div className="mt-4"></div>
+    
+    </div>  
+      <Footer />
+  </div>
   )
 }
 

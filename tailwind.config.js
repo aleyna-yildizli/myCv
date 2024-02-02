@@ -5,7 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {container:{
+    extend: {container: {
       paddingLeft: '5rem',
       paddingRight: '7rem'
      }},

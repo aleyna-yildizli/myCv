@@ -1,5 +1,5 @@
 import { legacy_createStore as createStore } from 'redux';
-import { DARK_MODE, LANGUAGE_TR, darkMode } from './action.js'
+import { DARK_MODE, darkMode } from './action.js'
 
 
 //localim null ise false değilse localdekini yaz.
@@ -7,7 +7,6 @@ import { DARK_MODE, LANGUAGE_TR, darkMode } from './action.js'
 const localDarkMode = localStorage.getItem('darkMode');
 const initialState = {
     darkMode: localDarkMode !== null ? JSON.parse(localDarkMode) : false,
-    language: 'TR',
   }
   
 const reducer = (state = initialState, action) => {

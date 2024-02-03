@@ -1,6 +1,6 @@
 import { IoToggleSharp } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
-import { darkMode, languageTr } from '../../store/action';
+import { darkMode } from '../../store/action';
 import useLocalStorage from "../../hook/useLocalStorage";
 
 
@@ -16,10 +16,7 @@ export default function ModeSwitch () {
     };
 
 
-    const LanguageHandler = () => {
-        setIsDarkMode(!isLanguageTr);
-        dispatch(languageTr());
-    };
+    
     
     
 
@@ -31,10 +28,8 @@ export default function ModeSwitch () {
                 <div className="text-[#777777] dark:text-gray-300 flex items-center"> <IoToggleSharp onClick={toggleDarkMode} className="w-[55px] h-[24px]"/>DARK MODE</div>
                 |
                 <div>
-                    <button onClick={LanguageHandler}>
                     <span className="text-[#4731D3] dark:text-[#BAB2E7s]">TÜRKÇE</span>
                     <span className="text-[#777777]" >'YE GEÇ</span>
-                    </button>
                 </div>
             </div>
         </div>

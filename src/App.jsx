@@ -6,6 +6,7 @@ import Hero from './components/Hero/Hero';
 import Skills from './components/Skills/Skills';
 import ModeSwitch from './components/ModeSwitch/ModeSwitch';
 
+
 import './App.css'
 
 function App() {

@@ -3,7 +3,7 @@ import ProjectItem from "./ProjectItem"
 export default function Projects () {
     return (
         <div className="flex flex-col gap-4 w-full mb-7">
-          <h2 className="text-4xl font-bold">Projects</h2>
+          <h2 className="text-4xl font-bold dark:text-[#AEBCCF]">Projects</h2>
           <div className="grid grid-cols-3 gap-5">
             <ProjectItem 
             name="react"

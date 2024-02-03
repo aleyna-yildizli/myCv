@@ -7,19 +7,12 @@ import useLocalStorage from "../../hook/useLocalStorage";
 export default function ModeSwitch () {
     const dispatch = useDispatch();
     const [isDarkMode, setIsDarkMode] = useLocalStorage('darkMode', false);
-    const [isLanguageTr, setIsLanguageTr] = useLocalStorage('languageTr', false);
 
     
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
         dispatch(darkMode());
     };
-
-
-    
-    
-    
-
 
     return (
         <div className="media_500 flex items-center justify-between pt-[23px]">

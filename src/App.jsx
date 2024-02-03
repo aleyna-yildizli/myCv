@@ -5,17 +5,16 @@ import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Skills from './components/Skills/Skills';
 import ModeSwitch from './components/ModeSwitch/ModeSwitch';
-
-import { useSelector } from 'react-redux'
-import { myStore } from './store/store'
+import useLocalStorage from './hook/useLocalStorage'
 
 
 import './App.css'
 
 function App() {
 
+  const darkModeKey = 'darkMode';
+  const [isDarkMode, setDarkMode] = useLocalStorage(darkModeKey, false);
 
-  const isDarkMode = useSelector((state) => state.darkMode);
 
 
   return (

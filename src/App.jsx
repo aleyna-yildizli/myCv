@@ -20,7 +20,7 @@ function App() {
 
   return (
   
-    <div className={`w-full h-screen ${isDarkMode ? 'dark bg-[#252128]' : 'bg-white'}`}>
+    <div className={`w-full ${isDarkMode ? 'dark bg-[#252128]' : 'bg-white'}`}>
     <div className="container mx-auto dark:bg-[#252128]">
       <ModeSwitch/>
       <Header />

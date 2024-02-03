@@ -1,8 +1,23 @@
 import { legacy_createStore as createStore } from 'redux';
+import { DARK_MODE } from './action.js'
 
-const globalReducer = (state, action) => {
-    return state;
+
+const initialState = {
+    darkMode: false,
   }
   
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+      case "DARK_MODE":
+        return { 
+            ...state,
+            darkMode: !state.darkMode,
+         };
+   
+      default:
+        return state;
+    }
+  };
 
-export const myStore = createStore(globalReducer);
+
+export const myStore = createStore(reducer);

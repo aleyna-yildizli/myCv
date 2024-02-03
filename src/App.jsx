@@ -6,12 +6,21 @@ import Hero from './components/Hero/Hero';
 import Skills from './components/Skills/Skills';
 import ModeSwitch from './components/ModeSwitch/ModeSwitch';
 
+import { useSelector } from 'react-redux'
+import { myStore } from './store/store'
+
 
 import './App.css'
 
 function App() {
+
+
+  const isDarkMode = useSelector((state) => state.darkMode);
+
+
   return (
-    <div className="w-full h-screen">
+  
+    <div className={`w-full h-screen ${isDarkMode ? 'dark bg-[#252128]' : 'bg-white'}`}>
     <div className="container mx-auto dark:bg-[#252128]">
       <ModeSwitch/>
       <Header />

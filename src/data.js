@@ -4,7 +4,8 @@
         "hero": {
           "name": "Aleyna Yıldızlı",
           "presentation": "Imaginative Problem Solver | Finding Beauty in Simplicity",
-          "introduction": "Hey there! I'm Aleyna, a comprehensive developer passionate about creating excellent user experiences. With extensive experience in both front-end and back-end development, I always aim to design my projects in a strong, scalable, and innovative manner. As an effective communicator within a team, I'm here to make our projects successful together."
+          "introduction": "Hey there! I'm Aleyna, a comprehensive developer passionate about creating excellent user experiences. With extensive experience in both front-end and back-end development, I always aim to design my projects in a strong, scalable, and innovative manner. As an effective communicator within a team, I'm here to make our projects successful together.",
+          "image": "images/IMG_3048.jpg"
         },
         "skills": [
           {
@@ -87,7 +88,8 @@
         "hero": {
           "name": "Aleyna Yıldızlı",
           "presentation": "Hayalperest Problem Çözücü | Basitlikte Güzelliği Bulan",
-          "introduction": "Merhaba! Ben Aleyna, mükemmel kullanıcı deneyimleri yaratmaya tutkulu kapsamlı bir geliştiriciyim. Hem ön yüz hem de arka yüz geliştirme konusunda geniş deneyime sahip olarak projelerimi her zaman güçlü, ölçeklenebilir ve yenilikçi bir şekilde tasarlamayı amaçlıyorum. Bir ekip içinde etkili bir iletişimci olarak, projelerimizi birlikte başarılı kılmak için buradayım."
+          "introduction": "Merhaba! Ben Aleyna, mükemmel kullanıcı deneyimleri yaratmaya tutkulu kapsamlı bir geliştiriciyim. Hem ön yüz hem de arka yüz geliştirme konusunda geniş deneyime sahip olarak projelerimi her zaman güçlü, ölçeklenebilir ve yenilikçi bir şekilde tasarlamayı amaçlıyorum. Bir ekip içinde etkili bir iletişimci olarak, projelerimizi birlikte başarılı kılmak için buradayım.",
+          "image": "images/IMG_3048.jpg"
         },
         "skills": [
           {

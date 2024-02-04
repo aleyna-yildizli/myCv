@@ -18,7 +18,7 @@ export default function ModeSwitch () {
     };
 
     const handleChangeLanguage = () => {
-        setIsLanguageTr(!isLanguageTr);
+        setIsLanguageTr(isLanguageTr === "EN" ? "TR" : "EN");
         dispatch(languageTr());
     }
 

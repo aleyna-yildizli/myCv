@@ -20,7 +20,7 @@ export default function Hero () {
                 </div>
                 </div>
                 <div className="w-full h-full relative ">
-                <img className="w-[476px] h-[375px] object-cover rounded-lg absolute right-0" src="../../images/IMG_3048.jpg" alt=""/>
+                <img className="w-[476px] h-[375px] object-cover rounded-lg absolute right-0" src="IMG_3048.jpg" alt=""/>
             </div>
             </div>
         </div>

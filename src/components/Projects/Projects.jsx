@@ -9,17 +9,17 @@ export default function Projects () {
             name="react"
             title="Workintech" 
             description="A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible." 
-            image="../public/images/69bb4825e42350e768340fdbec09d78b.png"/>  
+            image="69bb4825e42350e768340fdbec09d78b.png"/>  
             <ProjectItem
             name="redux"
             title="Random Jokes" 
             description="A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible." 
-            image="../public/images/2ad18b91bc83b5e0c2524ee319ac4a12.png" /> 
+            image="2ad18b91bc83b5e0c2524ee319ac4a12.png" /> 
             <ProjectItem 
             name="axios"
             title="Journey" 
             description="A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible." 
-            image="../public/images/a9370e031b441737654465d0f374af51.png" />  
+            image="a9370e031b441737654465d0f374af51.png" />  
            </div> 
         </div>
       )

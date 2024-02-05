@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 
-const useAxios (url) => {
+const useAxios = (url) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -22,7 +22,7 @@ const useAxios (url) => {
         fetchData();
     }, [url]);
 
-    return { data, loading, error };
+    return [ data, loading, error ];
 }
 
 export default useAxios;

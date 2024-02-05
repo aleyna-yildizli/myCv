@@ -1,8 +1,13 @@
 import { BiSolidHandRight } from "react-icons/bi";
-
+import useAxios from '../../hook/useAxios';
 
 
 export default function Footer () {
+
+    const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/cvData";
+    const [ cvData, loading, error ] = useAxios(url);
+
+
     return (
         <div className="bg-gray-100 dark:bg-[#141414] ">
             <div className="mx-auto h-[251px]">

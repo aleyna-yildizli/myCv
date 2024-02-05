@@ -5,12 +5,15 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from "react-redux";
 import { myStore } from "./store/store";
+import { LanguageProvider } from './context/LanguageContext.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 <Provider store={myStore}>
+  <LanguageProvider>
   <BrowserRouter>
     <App />
   </BrowserRouter>
+  </LanguageProvider>
 </Provider>
 );

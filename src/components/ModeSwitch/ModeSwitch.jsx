@@ -8,12 +8,12 @@ import useLocalStorage from "../../hook/useLocalStorage";
 
 export default function ModeSwitch () {
     const dispatch = useDispatch();
-    const [iStheme, setIsTheme] = useLocalStorage("theme", "light");
+    const [isTheme, setIsTheme] = useLocalStorage("theme", "light");
     const [isLanguage, setIsLanguage] = useLocalStorage("language", 'EN');
 
 
     const toggleTheme = () => {
-        setIsTheme(iStheme === "light" ? "dark" : "light");
+        setIsTheme(isTheme === "light" ? "dark" : "light");
         dispatch(theme());
     };
 

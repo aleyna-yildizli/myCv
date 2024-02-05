@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 
 const useAxios = (url) => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 

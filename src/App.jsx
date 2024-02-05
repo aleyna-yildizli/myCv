@@ -13,11 +13,11 @@ import './App.css'
 
 
 function App() {
-  const theme = useSelector((state) => state.theme);
+  const isDarkMode = useSelector((state) => state.theme);
 
   return (
   
-    <div className={`w-full ${theme === "light" ? 'bg-white' : 'dark bg-[#252128]'}`}>
+    <div className={`w-full ${isDarkMode === "light" ? 'bg-white' : 'dark bg-[#252128]'}`}>
     <div className="container mx-auto dark:bg-[#252128]">
       <ModeSwitch/>
       <Header />

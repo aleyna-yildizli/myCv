@@ -79,8 +79,25 @@
         ],
         "footer": [
           {
-            "text": "Let’s work together on your next product.",
-            "mail": "aleynayildizli@hmail.com"
+            "text": {
+              "line1": "Let's work together on",
+              "line2": "your next product.",
+            },
+            "mail": "aleynayildizli@gmail.com",
+            "links": [
+              {
+                "text": "Personal Blog",
+                "link": "https://vercel.com/aleynas-projects-f12a5b3d"
+              },
+              {
+                "text": "Github",
+                "link": "https://github.com/aleyna-yildizli"
+              },
+              {
+                "text": "Linkedin",
+                "link": "https://www.linkedin.com/in/aleynayldizli/"
+              }
+            ]
           }
         ]
       },
@@ -129,7 +146,8 @@
         "projects": [
           {
             "title": "Workintech",
-            "info": "A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.",
+            "info": 
+            "Basit, özelleştirilebilir, minimal kurulum gerektiren bir çerez eklentisi. Kullanıcılarınıza hangi çerezleri kabul edip reddedeceklerini seçme imkanı tanır. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturuldu ve bir NPM paketi olarak kullanılabilir. Ayrıca, git deposu üzerinden kod ve temaların her türlü özelleştirmesine olanak tanır.",
             "tags": [
               "react",
               "redux",
@@ -140,7 +158,8 @@
           },
           {
             "title": "Random Jokes",
-            "info": "A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.",
+            "info": 
+            "Basit, özelleştirilebilir, minimal kurulum gerektiren bir çerez eklentisi. Kullanıcılarınıza hangi çerezleri kabul edip reddedeceklerini seçme imkanı tanır. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturuldu ve bir NPM paketi olarak kullanılabilir. Ayrıca, git deposu üzerinden kod ve temaların her türlü özelleştirmesine olanak tanır.",
             "tags": [
               "react",
               "redux",
@@ -151,7 +170,8 @@
           },
           {
             "title": "Journey",
-            "info": "A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.",
+            "info": 
+            "Basit, özelleştirilebilir, minimal kurulum gerektiren bir çerez eklentisi. Kullanıcılarınıza hangi çerezleri kabul edip reddedeceklerini seçme imkanı tanır. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturuldu ve bir NPM paketi olarak kullanılabilir. Ayrıca, git deposu üzerinden kod ve temaların her türlü özelleştirmesine olanak tanır.",
             "tags": [
               "react",
               "redux",
@@ -163,8 +183,25 @@
         ],
         "footer": [
           {
-            "text": "Let’s work together on your next product.",
-            "mail": "aleynayildizli@hmail.com"
+            "text": {
+              "line1": "Gelecek projenizde",
+              "line2": "birlikte çalışmak isterim",
+            },
+            "mail": "aleynayildizli@gmail.com",
+            "links": [
+              {
+                "text": "Kişisel Blog",
+                "link": "https://vercel.com/aleynas-projects-f12a5b3d"
+              },
+              {
+                "text": "Github",
+                "link": "https://github.com/aleyna-yildizli"
+              },
+              {
+                "text": "Linkedin",
+                "link": "https://www.linkedin.com/in/aleynayldizli/"
+              }
+            ]
           }
         ]
       }

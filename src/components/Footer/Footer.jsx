@@ -4,7 +4,7 @@ import useAxios from '../../hook/useAxios';
 
 export default function Footer () {
 
-    const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/cvData";
+    const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
     const [ cvData, loading, error ] = useAxios(url);
 
 

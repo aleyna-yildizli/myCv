@@ -22,13 +22,6 @@ export default function Footer () {
         }
       }, [data, language, englishFooter, turkishFooter]);
 
-      useEffect(() => {
-        if (!footerData || !footerData.text) {
-            console.error("footerData or footerData.text is empty!");
-        }
-    }, [footerData]);
-
-
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -37,9 +30,6 @@ export default function Footer () {
         return <div>Error: {error.message}</div>;
     }
 
-    if (!data) {
-        return null; 
-    }
 
       const { text, mail, links } = footerData || {};
 

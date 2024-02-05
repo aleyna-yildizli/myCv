@@ -1,11 +1,11 @@
-export const DARK_MODE = 'DARK_MODE';
-export const LANGUAGE_TR = 'LANGUAGE_TR';
+export const TOGGLE_THEME = 'TOGGLE_THEME';
+export const TOGGLE_LANGUAGE = 'TOGGLE_LANGUAGE';
 
 
-export const darkMode = () => {
-    return { type: DARK_MODE };
+export const theme = () => {
+    return { type: TOGGLE_THEME};
 }
 
 export const languageTr = () => {
-    return { type: LANGUAGE_TR };
+    return { type: TOGGLE_LANGUAGE };
 }

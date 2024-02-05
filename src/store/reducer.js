@@ -1,21 +1,21 @@
-import { DARK_MODE, LANGUAGE_TR } from './action.js';
+import { TOGGLE_THEME, TOGGLE_LANGUAGE } from './action.js';
 
-const localDarkMode = localStorage.getItem('darkMode');
+const localTheme = localStorage.getItem('theme');
 const localLanguage = localStorage.getItem('language');
 
 const initialState = {
-    darkMode: localDarkMode !== null ? JSON.parse(localDarkMode) : false,
+    theme: localTheme !== null ? JSON.parse(localTheme) : "light",
     language: localLanguage === null ? "EN" : JSON.parse(localLanguage),
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case DARK_MODE:
+        case TOGGLE_THEME:
             return {
                 ...state,
-                darkMode: !state.darkMode,
+                theme: state.theme === "light" ? "dark" : "light",
             };
-        case LANGUAGE_TR:
+        case TOGGLE_LANGUAGE:
             return {
                 ...state,
                 language: state.language === "EN" ? "TR" : "EN",

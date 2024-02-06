@@ -12,7 +12,9 @@ const useAxios = (url) => {
             try {
                 setLoading(true);
                 const response = await axios.get(url);
-                setData(response.data);
+                setTimeout(() => {
+                    setData(response.data);
+                }, 500);
                 setLoading(false);
             } catch (error) {
                 setError(error);

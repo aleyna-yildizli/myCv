@@ -7,6 +7,7 @@ import Skills from './components/Skills/Skills';
 import ModeSwitch from './components/ModeSwitch/ModeSwitch';
 
 import useAxios from './hook/useAxios';
+import PacmanLoader from 'react-spinners/PacmanLoader'
 
 import { useSelector } from 'react-redux'
 import './App.css'
@@ -21,7 +22,7 @@ function App() {
   const [ data, loading, error ] = useAxios(url);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='flex items-center justify-center mx-auto custom_loading'><PacmanLoader color="#36d7b7" /></div>;
 }
 
 

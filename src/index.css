@@ -67,3 +67,10 @@ body {
    }
 
 }
+
+.custom_loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: (-50%, -50%);
+}

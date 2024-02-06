@@ -38,7 +38,7 @@ export default function Footer ({data}) {
                     </span>
                         <ul className="flex items-center gap-4">
                         {links && links.map((link, index) => (
-                            <li key={index} className={`text-[13px] font-semibold cursor-pointer ${isDarkMode === "dark" ? link?.text?.darkClass : link?.text?.lightClass}`}>
+                            <li key={index} className={`text-[13px] font-semibold cursor-pointer ${isDarkMode === "dark" ? link.text.darkClass : link.text.lightClass}`}>
                                  {link.text.content}
                              </li>
                         ))}

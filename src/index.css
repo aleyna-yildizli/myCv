@@ -12,3 +12,58 @@ body {
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
+@media screen and (max-width:1440px){
+  .container {
+   padding-left: 5rem;
+   padding-right: 7rem;
+  }
+
+}
+
+@media screen and (max-width:1200px){
+  
+  .container {
+    padding-left: 4rem;
+    padding-right: 6rem;
+   }
+   .hero_image {
+    display: none;
+   }
+}
+@media screen and  (max-width:992px){
+  
+  .container {
+    padding-left: 3rem;
+    padding-right: 5rem;
+   }
+   .hero_image {
+    display: none;
+   }
+}
+@media screen and (max-width:768px){
+  .container {
+    padding-left: 2rem;
+    padding-right: 3.5rem;
+    
+   }
+
+   .hero_image {
+    display: none;
+   }
+}
+@media screen and (max-width:576px){
+ 
+  .container {
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+   }
+
+   .hero_image {
+    display: none;
+   }
+
+}

@@ -45,7 +45,7 @@ export default function Footer () {
 
     return (
         <div className="bg-gray-100 dark:bg-[#141414] ">
-            <div className="mx-auto h-[251px]">
+            <div className="mx-auto xl:h-[251px] lg:h-[211px] md:h-[181px] h-[150px]">
                 <div className="flex flex-col gap-2 justify-center p-[60px]">
                 {text && ( 
                     <span className="text-3xl font-semibold dark:text-[#AEBCCF]">

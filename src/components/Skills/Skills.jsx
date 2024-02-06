@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import useAxios from '../../hook/useAxios';
-import { useLanguage } from "../../context/LanguageContext";
+import { useSelector } from 'react-redux';
 
 
-export default function Skills () {
-
-    const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
-    const [ data, loading, error ] = useAxios(url);
+export default function Skills ({data}) {
     const [skillsData, setSkillsData] = useState([]);
-    const { language } = useLanguage();
+    const lang = useSelector((state) => state.language);
 
 
 
@@ -19,18 +15,9 @@ export default function Skills () {
 
     useEffect(() => {
         if (data) {
-            setSkillsData(language === 'en' ? englishSkills : turkishSkills);
+            setSkillsData(lang === 'EN' ? englishSkills : turkishSkills);
         }
-      }, [data, language, englishSkills, turkishSkills]);
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    }
-    
+      }, [data, lang]);
 
 
       const { title, description} = skillsData || [];

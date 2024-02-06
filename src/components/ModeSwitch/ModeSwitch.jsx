@@ -2,16 +2,15 @@ import { IoToggleSharp } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
 import { theme, languageTr } from '../../store/action';
 import useLocalStorage from "../../hook/useLocalStorage";
-import useAxios from '../../hook/useAxios';  
 
 
 
 
-export default function ModeSwitch () {
+export default function ModeSwitch ({data}) {
     const dispatch = useDispatch();
     const [isTheme, setIsTheme] = useLocalStorage("theme", "light");
     const [isLanguage, setIsLanguage] = useLocalStorage("language", 'EN');
-    const { data, loading, error } = useAxios("https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data");
+
 
 
     const toggleTheme = () => {

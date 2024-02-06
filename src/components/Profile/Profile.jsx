@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import useAxios from '../../hook/useAxios';
 import { useSelector } from 'react-redux';
 
 
-export default function Profile() {
+export default function Profile({data}) {
 
-
-  const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
-  const [ data, loading, error ] = useAxios(url);
   const [profileData, setProfileData] = useState([]);
   const lang = useSelector((state) => state.language);
-
-
 
   const englishProfile = data[0]?.en?.profile;
   const turkishProfile = data[1]?.tr?.profile;
@@ -22,17 +16,7 @@ export default function Profile() {
       if (data) {
         setProfileData(lang === 'EN' ? englishProfile : turkishProfile);
       }
-    }, [data, lang, englishProfile, turkishProfile]);
-
-  if (loading) {
-      return <div>Loading...</div>;
-  }
-
-  if (error) {
-      return <div>Error: {error.message}</div>;
-  }
-    console.log(profileData);
-
+    }, [data, lang]);
 
     const { aboutMe, content} = profileData || [];
 

@@ -6,6 +6,8 @@ import Hero from './components/Hero/Hero';
 import Skills from './components/Skills/Skills';
 import ModeSwitch from './components/ModeSwitch/ModeSwitch';
 
+import useAxios from './hook/useAxios';
+
 import { useSelector } from 'react-redux'
 import './App.css'
 
@@ -15,22 +17,30 @@ import './App.css'
 function App() {
   const isDarkMode = useSelector((state) => state.theme);
 
+  const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
+  const [ data, loading, error ] = useAxios(url);
+
+  if (loading) {
+    return <div>Loading...</div>;
+}
+
+
   return (
   
     <div className={`w-full ${isDarkMode === "light" ? 'bg-white' : 'dark bg-[#252128]'}`}>
     <div className="container mx-auto dark:bg-[#252128]">
-      <ModeSwitch/>
+      <ModeSwitch data={data} loading={loading} error={error}/>
       <Header />
-      <Hero />
-      <Skills />
+      <Hero data={data} loading={loading} error={error}/>
+      <Skills data={data} loading={loading} error={error} />
       <div className="w-full h-[1px] bg-gray-300 my-4"></div>
-      <Profile />
+      <Profile data={data} loading={loading} error={error}/>
       <div className="w-full h-[1px] bg-gray-300 my-4"></div>
-      <Projects />
+      <Projects data={data} loading={loading} error={error}/>
       <div className="mt-4"></div>
     
     </div>  
-      <Footer />
+      <Footer data={data} loading={loading} error={error}/>
   </div>
   )
 }

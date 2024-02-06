@@ -2,34 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedinIn } from "react-icons/fa6";
-import useAxios from '../../hook/useAxios';
 import { useSelector } from "react-redux";
-import { useLanguage } from "../../context/LanguageContext";
 import "./style.css"
 ;
-export default function Hero () {
-    const { language } = useLanguage();
-    const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
-    const [ data, loading, error ] = useAxios(url);
-
+export default function Hero ({data}) {
     const [heroData, setHeroData] = useState({});
+    const lang = useSelector((state) => state.language);
 
     const englishHero = data[0]?.en?.hero[0];
     const turkishHero = data[1]?.tr?.hero[0];
 
     useEffect(() => {
-        if (data && (language === 'en' ? englishHero : turkishHero)) {
-            setHeroData(language === 'en' ? englishHero : turkishHero);
+        if (data && (lang === 'EN' ? englishHero : turkishHero)) {
+            setHeroData(lang === 'EN' ? englishHero : turkishHero);
         }
-    }, [data, language, englishHero, turkishHero]);
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    }
+    }, [data, lang]);
 
     const { name, presentation, introduction, image } = heroData || {};
 

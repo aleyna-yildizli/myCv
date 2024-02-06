@@ -1,37 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import useAxios from '../../hook/useAxios';
-import { useLanguage } from "../../context/LanguageContext";
-import { theme } from '../../store/action';
 import { useSelector } from 'react-redux';
 import "./style.css";
 
 
-export default function ProjectItem() {
+export default function ProjectItem({data}) {
 
-  const { language } = useLanguage();
-  const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
-  const [ data, loading, error ] = useAxios(url);
-  const [projectData, setProjectData] = useState([]);
   const isDarkMode = useSelector((state) => state.theme);
+
+  const [projectData, setProjectData] = useState([]);
+  const lang = useSelector((state) => state.language);
 
   const englishProject = data[0]?.en?.projects || [];
   const turkishProject = data[1]?.tr?.projects || [];
 
   useEffect(() => {
-    if (data && (language === 'en' ? englishProject : turkishProject)) {
-      setProjectData(language === 'en' ? englishProject : turkishProject);
+    if (data && (lang === 'EN' ? englishProject : turkishProject)) {
+      setProjectData(lang === 'EN' ? englishProject : turkishProject);
     }
-}, [data, language, englishProject, turkishProject]);
-
-  if (loading) {
-      return <div>Loading...</div>;
-  }
-
-  if (error) {
-      return <div>Error: {error.message}</div>;
-  }
-
+  }, [data, lang]);
 
     const { title, image, info, tags, github, view } = projectData || [];
 

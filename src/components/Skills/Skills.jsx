@@ -22,17 +22,19 @@ export default function Skills ({data}) {
 
       const { title, description} = skillsData || [];
 
-      return (
-        <div className="flex flex-col xl:gap-4 md:gap-2 gap-1 w-full xl:mt-20 xl:mb-20 lg:mt-6 lg:mb-6 md:mt-3 md:mb-3 mt-2 mb-1">
-        <h2 className="xl:text-[48px] lg:text-[40px] md:text-[32px] text-[24px]  font-bold dark:text-[#AEBCCF]">Skills</h2>
-        <div className="flex justify-between w-full">
-        {skillsData && skillsData.map((skill, index) => (
-                    <div key={index} className="flex flex-col gap-4 w-[300px]">
-                        <div className="text-indigo-700 xl:text-[30px] lg:text-[26px] md:text-[20px] text-[16px] dark:text-[#B7AAFF]">{skill.title}</div>
-                        <p className="xl:text-[14px] text-[12px] text-[#6B7280] dark:text-white">{skill.description}</p>
-                    </div>
-                ))}
+
+    return (
+        <div className="flex items-center justify-between w-full h-[62px]">
+            <div className="flex items-center justify-center w-[50px] h-[50px] rounded-[50%] bg-[#EEEBFF] dark:bg-[#4731D3]">
+                    <span className="text-[25px]  rotate-45 text-[#7B61FF] font-semibold dark:text-[#8F88FF]">A</span>
+            </div>
+                <nav>
+                <ul className="flex items-center xl:gap-16 lg:gap-4 md:gap-2 gap-1 xl:text-lg lg:text-base md:text-sm text-xs leading-7 font-medium text-gray-600">
+                    <li className="cursor-pointer xl:px-4 xl:py-2 px-2 py-1  text-[#6B7280] "><Link to='/'>Skills</Link></li>
+                    <li className="cursor-pointer xl:px-4 xl:py-2 px-2 py-1 text-[#6B7280] ">Projects</li>
+                    <li className="cursor-pointer border border-[#3730A3] text-[#3730A3] bg-white px-4 py-2 rounded outline-none ">Hire me</li>
+                </ul>
+                </nav>
         </div>
-    </div>
     )
 };

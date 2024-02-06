@@ -15,7 +15,7 @@ export default function Profile() {
             <div className="flex flex-col gap-5 items-start font-normal ml-10 text-black dark:text-white border border-solid border-1 border-[#3730A3]">
               <span>06.10.1997</span>
               <span>İzmir</span>
-              <span>Ege UNV, Mathematics <br></br> Lisans, 2023</span>
+              <span>Ege UNV, Mathematics <br></br> Lisans, 2022</span>
               <span>Frontend, UI</span>
             </div>
             </div>

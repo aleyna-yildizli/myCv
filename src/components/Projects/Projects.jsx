@@ -1,26 +1,76 @@
-import ProjectItem from "./ProjectItem"
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import useAxios from '../../hook/useAxios';
+import { useLanguage } from "../../context/LanguageContext";
+import { theme } from '../../store/action';
+import { useSelector } from 'react-redux';
 
-export default function Projects () {
+
+export default function ProjectItem() {
+
+  const { language } = useLanguage();
+  const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
+  const [ data, loading, error ] = useAxios(url);
+  const [projectData, setProjectData] = useState([]);
+  const isDarkMode = useSelector((state) => state.theme);
+
+  const englishProject = data[0]?.en?.projects || [];
+  const turkishProject = data[1]?.tr?.projects || [];
+
+  useEffect(() => {
+    if (data && (language === 'en' ? englishProject : turkishProject)) {
+      setProjectData(language === 'en' ? englishProject : turkishProject);
+    }
+}, [data, language, englishProject, turkishProject]);
+
+  if (loading) {
+      return <div>Loading...</div>;
+  }
+
+  if (error) {
+      return <div>Error: {error.message}</div>;
+  }
+
+
+    const { title, image, info, tags, github, view } = projectData || [];
+
     return (
-        <div className="flex flex-col gap-4 w-full">
-          <h2 className="text-4xl font-bold dark:text-[#AEBCCF]">Projects</h2>
-          <div className="grid grid-cols-3 gap-5">
-            <ProjectItem 
-            name="react"
-            title="Workintech" 
-            description="A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible." 
-            image="69bb4825e42350e768340fdbec09d78b.png"/>  
-            <ProjectItem
-            name="redux"
-            title="Random Jokes" 
-            description="A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible." 
-            image="2ad18b91bc83b5e0c2524ee319ac4a12.png" /> 
-            <ProjectItem 
-            name="axios"
-            title="Journey" 
-            description="A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible." 
-            image="a9370e031b441737654465d0f374af51.png" />  
-           </div> 
+      <div className="flex flex-col gap-4 w-full">
+      <h2 className="text-4xl font-bold dark:text-[#AEBCCF]">Projects</h2>
+      <div className="grid grid-cols-3 gap-5">
+        
+      {projectData.map((project, index) => (
+        <div key={index} className='flex flex-col border border-solid border-1 border-[#3730A3]'>
+          <img className='w-[300px] h-[180px] object-cover' src={`${project.image}`} alt="" />
+          {project.title && (
+            <h3 className='text-lg font-medium leading-7 text-[#4338CA] my-5 dark:text-[#CFCBFF]'>{project.title}</h3>
+          )}
+          {project.info && (
+            <p className='text-[14px] w-[300px] h-[180px] text-gray-800 dark:text-white'>{project.info}</p>
+          )}
+          <div className='flex flex-row items-center gap-2 my-5'>
+            {project.tags.map((tag, tagIndex) => (
+              <Link key={tagIndex} className='border border-[#3730A3] p-2 rounded text-[#3730A3] dark:text-[#8F88FF] dark:border-[#383838]' to="/">
+                {tag}
+              </Link>
+            ))}
+          </div>
+          <div className="flex justify-between">
+            {project.github && (
+              <Link to={"/"}>
+                <button className="font-medium flex-1 underline dark:text-[#E1E1FF] text-[#3730A3] text-base">{project.github}</button>
+              </Link>
+            )}
+            {project.view && (
+              <Link to={"/"}>
+                <button className="font-medium flex underline dark:text-[#E1E1FF] text-[#3730A3] text-base">view</button>
+              </Link>
+            )}
+          </div>
         </div>
+      ))}
+      
+      </div>
+    </div>
       )
-};
+}

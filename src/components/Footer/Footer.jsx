@@ -23,17 +23,17 @@ export default function Footer({ data }) {
 
   return (
     <div className="bg-gray-100 dark:bg-[#141414] ">
-      <div className="mx-auto xl:h-[251px] lg:h-[211px] md:h-[181px] h-[150px]">
-        <div className="flex flex-col gap-2 justify-center p-[60px]">
+       <div className="mx-auto xl:h-[251px] lg:h-[211px] md:h-[181px] h-[150px]">
+       <div className="flex flex-col gap-2 justify-center xl:p-[60px] lg:p-[40px] md:p-[30px] p-[20px]">
           {text && (
-            <span className="text-3xl font-semibold dark:text-[#AEBCCF]">
+            <span className="xl:text-[42px] lg:text-2xl md:text-xl text-base font-semibold dark:text-[#AEBCCF]">
               {text.first} <br />
               {text.second}
             </span>
           )}
         </div>
-        <div className="flex items-center justify-between px-[60px]">
-          <span className="flex items-center gap-2 dark:text-[#BAB2E7]">
+        <div className="flex items-center justify-between  xl:px-[60px] lg:px-[30px] md:px-[20px] px-[10px]">
+          <span className="flex items-center gap-2 text-[#AF0C48] dark:text-[#BAB2E7] xl:text-[20px] md:text-[12px] text-[10px]">
             <BiSolidHandRight className=" text-yellow-600" /> {email}
           </span>
           <ul className="flex items-center gap-4">
@@ -41,7 +41,7 @@ export default function Footer({ data }) {
               links.map((link, index) => (
                 <li
                   key={index}
-                  className={`text-[13px] font-semibold cursor-pointer ${
+                  className={`xl:text-[18px] md:text-[12px] text-[10px] font-semibold cursor-pointer ${
                     isDarkMode === 'dark'
                       ? link.text.dark
                       : link.text.light
@@ -56,3 +56,4 @@ export default function Footer({ data }) {
     </div>
   );
 }
+

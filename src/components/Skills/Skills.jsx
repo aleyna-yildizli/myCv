@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import useAxios from '../../hook/useAxios';
 import { useLanguage } from "../../context/LanguageContext";
 
+
 export default function Skills () {
 
     const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
     const [ data, loading, error ] = useAxios(url);
     const [skillsData, setSkillsData] = useState([]);
     const { language } = useLanguage();
+
 
 
     const englishSkills = data[0]?.en?.skills;

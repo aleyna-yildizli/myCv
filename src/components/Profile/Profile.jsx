@@ -31,7 +31,7 @@ export default function Profile() {
   if (error) {
       return <div>Error: {error.message}</div>;
   }
-  
+    console.log(profileData);
 
 
     const { aboutMe, content} = profileData || [];
@@ -39,10 +39,14 @@ export default function Profile() {
 
     return (
       <div className="mt-10 mb-20">
-        <h2 className="text-4xl font-bold mb-10 dark:text-[#AEBCCF]">Profile</h2>
+         {aboutMe && (
+        <h2 className="text-4xl font-bold mb-10 dark:text-[#AEBCCF]">{aboutMe.oneTitle}</h2>
+        )}
       <div className="flex gap-4 w-full mb-5  justify-between">
           <div className="flex-none gap-2 ">
-            <h3 className="flex text-[30px] text-[#4338CA] dark:text-[#B7AAFF] mb-5">Profile</h3>
+          {aboutMe && (
+            <h3 className="flex text-[30px] text-[#4338CA] dark:text-[#B7AAFF] mb-5">{aboutMe.oneTitle}</h3>
+            )}
             <div className="flex flex-row">
             <div className="flex flex-col gap-5 items-start text-[18px] font-semibold dark:text-white ">
             {content && content.map((item, index) => (
@@ -57,7 +61,9 @@ export default function Profile() {
             </div>
           </div>
           <div className="flex flex-col gap-4 ml-[56px] w-[48vw] mr-[130px]">
-            <h3 className="text-[30px] text-[#4338CA] dark:text-[#B7AAFF]">About Me</h3>
+          {aboutMe && (
+            <h3 className="text-[30px] text-[#4338CA] dark:text-[#B7AAFF]">{aboutMe.title}</h3>
+            )}
             {aboutMe && (
               <>
             <p className="text-[#6B7280] text-[18px] dark:text-white">

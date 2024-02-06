@@ -28,6 +28,7 @@ export default function Footer () {
     }, [footerData]);
 
 
+
     if (loading) {
         return <div>Loading...</div>;
     }

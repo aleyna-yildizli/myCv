@@ -64,7 +64,7 @@ export default function ProjectItem() {
             )}
             {project.view && (
               <Link to={"/"}>
-                <button className="font-medium flex underline dark:text-[#E1E1FF] text-[#3730A3] text-base">view</button>
+                <button className="font-medium flex underline dark:text-[#E1E1FF] text-[#3730A3] text-base">{project.view}</button>
               </Link>
             )}
           </div>

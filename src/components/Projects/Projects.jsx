@@ -23,20 +23,20 @@ export default function ProjectItem({data}) {
     const { title, image, info, tags, github, view } = projectData || [];
 
     return (
-      <div className="flex flex-col gap-4 w-full mt-20 mb-40">
-      <h2 className="text-4xl font-bold dark:text-[#AEBCCF] mb-5">Projects</h2>
-      <div className="flex justify-between gap-5">
+      <div className="flex flex-col gap-4 w-full xl:mt-20 xl:mb-40 lg:mt-10 lg:mb-20 md:mt-5 md:mb-10 mt-2 mb-5">
+      <h2 className="xl:text-[48px] lg:text-[40px] md:text-[32px] text-[24px]  font-bold dark:text-[#AEBCCF] xl:mb-5 lg:mb-3 md:mb-2 mb-1">Projects</h2>
+      <div className="flex justify-between xl:gap-5 lg:gap-3 md:gap-2 gap-1">
         
       {projectData.map((project, index) => (
-        <div key={index} className='flex flex-col w-[23vw]'>
+        <div key={index} className='flex flex-col xl:w-[23vw] lg:w-[20vw] md:w-[25vw] w-[27vw]'>
           <img className='h-[180px] object-cover' src={`${project.image}`} alt="" />
           {project.title && (
-            <h3 className='text-[30px] font-medium leading-7 text-[#4338CA] my-5 dark:text-[#CFCBFF]'>{project.title}</h3>
+            <h3 className='xl:text-[30px] lg:text-[26px] md:text-[20px] text-[16px] font-medium leading-7 text-[#4338CA] xl:my-5 lg:my-3 md:my-2 my-1 dark:text-[#CFCBFF]'>{project.title}</h3>
           )}
           {project.info && (
             <p className='text-[14px]  text-gray-800 dark:text-white'>{project.info}</p>
           )}
-          <div className='flex flex-row items-center gap-2 my-5'>
+          <div className='flex flex-row items-center gap-2 xl:my-5 lg:my-3 md:my-2 my-1 xl:text-base md:text-sm text-xs'>
             {project.tags.map((tag, tagIndex) => (
               <Link key={tagIndex} className='project_tag border border-[#3730A3] rounded text-[#3730A3] dark:text-[#8F88FF] dark:border-[#383838]' to="/">
                 {tag}
@@ -46,12 +46,12 @@ export default function ProjectItem({data}) {
           <div className="flex justify-between">
             {project.github && (
               <Link to={"/"}>
-                <button className="font-medium flex-1 underline dark:text-[#E1E1FF] text-[#3730A3] text-base">{project.github}</button>
+                <button className="font-medium flex-1 underline dark:text-[#E1E1FF] text-[#3730A3] xl:text-base md:text-sm text-xs">{project.github}</button>
               </Link>
             )}
             {project.view && (
               <Link to={"/"}>
-                <button className="font-medium flex underline dark:text-[#E1E1FF] text-[#3730A3] text-base">{project.view}</button>
+                <button className="font-medium flex underline dark:text-[#E1E1FF] text-[#3730A3] xl:text-base md:text-sm text-xs">{project.view}</button>
               </Link>
             )}
           </div>

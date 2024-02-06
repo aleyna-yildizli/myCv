@@ -1,26 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { BiSolidHandRight } from "react-icons/bi";
 import useAxios from '../../hook/useAxios';
-import { useLanguage } from "../../context/LanguageContext";
-import { theme } from '../../store/action';
 import { useSelector } from 'react-redux';
 
 
 export default function Footer () {
-    const { language } = useLanguage();
     const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
     const [ data, loading, error ] = useAxios(url);
     const [footerData, setFooterData] = useState({});
     const isDarkMode = useSelector((state) => state.theme);
+    const lang = useSelector((state) => state.language);
+
 
     const englishFooter = data[0]?.en?.footer[0];
     const turkishFooter = data[1]?.tr?.footer[0];
 
     useEffect(() => {
         if (data) {
-          setFooterData(language === 'en' ? englishFooter : turkishFooter);
+          setFooterData(lang === 'EN' ? englishFooter : turkishFooter);
         }
-      }, [data, language, englishFooter, turkishFooter]);
+      }, [data, lang, englishFooter, turkishFooter]);
+
+      useEffect(() => {
+        if (!footerData || !footerData.text) {
+            console.error("footerData or footerData.text is empty!");
+        }
+    }, [footerData]);
+
 
     if (loading) {
         return <div>Loading...</div>;
@@ -30,6 +36,9 @@ export default function Footer () {
         return <div>Error: {error.message}</div>;
     }
 
+    if (!data) {
+        return null; 
+    }
 
       const { text, mail, links } = footerData || {};
 
@@ -50,7 +59,7 @@ export default function Footer () {
                     </span>
                         <ul className="flex items-center gap-4">
                         {links && links.map((link, index) => (
-                            <li key={index} className={`text-[13px] font-semibold cursor-pointer ${isDarkMode ? link.text.darkClass : link.text.lightClass}`}>
+                            <li key={index} className={`text-[13px] font-semibold cursor-pointer ${isDarkMode === "dark" ? link.text.darkClass : link.text.lightClass}`}>
                                  {link.text.content}
                              </li>
                         ))}
@@ -58,5 +67,5 @@ export default function Footer () {
                  </div>
             </div>
         </div>
-            )}
+    )}
     

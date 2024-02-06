@@ -4,6 +4,7 @@ import useAxios from '../../hook/useAxios';
 import { useLanguage } from "../../context/LanguageContext";
 import { theme } from '../../store/action';
 import { useSelector } from 'react-redux';
+import "./style.css";
 
 
 export default function ProjectItem() {
@@ -35,22 +36,22 @@ export default function ProjectItem() {
     const { title, image, info, tags, github, view } = projectData || [];
 
     return (
-      <div className="flex flex-col gap-4 w-full">
-      <h2 className="text-4xl font-bold dark:text-[#AEBCCF]">Projects</h2>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="flex flex-col gap-4 w-full mt-20 mb-40">
+      <h2 className="text-4xl font-bold dark:text-[#AEBCCF] mb-5">Projects</h2>
+      <div className="flex justify-between gap-5">
         
       {projectData.map((project, index) => (
-        <div key={index} className='flex flex-col border border-solid border-1 border-[#3730A3]'>
-          <img className='w-[300px] h-[180px] object-cover' src={`${project.image}`} alt="" />
+        <div key={index} className='flex flex-col w-[23vw]'>
+          <img className='h-[180px] object-cover' src={`${project.image}`} alt="" />
           {project.title && (
-            <h3 className='text-lg font-medium leading-7 text-[#4338CA] my-5 dark:text-[#CFCBFF]'>{project.title}</h3>
+            <h3 className='text-[30px] font-medium leading-7 text-[#4338CA] my-5 dark:text-[#CFCBFF]'>{project.title}</h3>
           )}
           {project.info && (
-            <p className='text-[14px] w-[300px] h-[180px] text-gray-800 dark:text-white'>{project.info}</p>
+            <p className='text-[14px]  text-gray-800 dark:text-white'>{project.info}</p>
           )}
           <div className='flex flex-row items-center gap-2 my-5'>
             {project.tags.map((tag, tagIndex) => (
-              <Link key={tagIndex} className='border border-[#3730A3] p-2 rounded text-[#3730A3] dark:text-[#8F88FF] dark:border-[#383838]' to="/">
+              <Link key={tagIndex} className='project_tag border border-[#3730A3] rounded text-[#3730A3] dark:text-[#8F88FF] dark:border-[#383838]' to="/">
                 {tag}
               </Link>
             ))}

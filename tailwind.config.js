@@ -7,8 +7,8 @@ export default {
   darkMode:'class',
   theme: {
     extend: {container: {
-      paddingLeft: '7rem',
-      paddingRight: '10rem'
+      paddingLeft: '5rem',
+      paddingRight: '7rem',
      }},
   },
   plugins: [],

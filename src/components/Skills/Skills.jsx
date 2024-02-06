@@ -34,13 +34,13 @@ export default function Skills () {
       const { title, description} = skillsData || [];
 
     return (
-        <div className="flex flex-col gap-4 w-full mb-5">
-        <h2 className="text-4xl font-bold dark:text-[#AEBCCF]">Skills</h2>
-        <div className="grid grid-cols-3 w-full">
+        <div className="flex flex-col gap-4 w-full mt-20 mb-20">
+        <h2 className="text-[48px] font-bold dark:text-[#AEBCCF]">Skills</h2>
+        <div className="flex justify-between w-full">
         {skillsData && skillsData.map((skill, index) => (
-                    <div key={index} className="flex flex-col gap-4">
-                        <div className="text-indigo-700 text-[20px] dark:text-[#B7AAFF]">{skill.title}</div>
-                        <p className="text-[12px] text-gray-900 dark:text-white">{skill.description}</p>
+                    <div key={index} className="flex flex-col gap-4 w-[300px]">
+                        <div className="text-indigo-700 text-[30px] dark:text-[#B7AAFF]">{skill.title}</div>
+                        <p className="text-[12px] text-[#6B7280] dark:text-white">{skill.description}</p>
                     </div>
                 ))}
         </div>

@@ -3,6 +3,7 @@ import { TOGGLE_THEME, TOGGLE_LANGUAGE } from './action.js';
 const localTheme = localStorage.getItem('theme');
 const localLanguage = localStorage.getItem('language');
 
+//localim nullsa light ve en getir, locale değer gelirse parse et ve initial yap.
 const initialState = {
     theme: localTheme !== null ? JSON.parse(localTheme) : "light",
     language: localLanguage === null ? "EN" : JSON.parse(localLanguage),

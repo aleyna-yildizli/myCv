@@ -12,12 +12,11 @@ export default function Footer({ data }) {
   const turkishFooter = data[1]?.tr?.footer; 
 
   useEffect(() => {
-    if (data && lang) {
+    if (data) {
       setFooterData(lang === 'EN' ? englishFooter : turkishFooter);
     }
   }, [data, lang]);
 
-  if (!footerData) return null; 
 
   const { text, email, links } = footerData || {};
 

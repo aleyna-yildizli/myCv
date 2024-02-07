@@ -13,7 +13,7 @@ export default function Hero ({data}) {
     const turkishHero = data[1]?.tr?.hero[0];
 
     useEffect(() => {
-        if (data && (lang === 'EN' ? englishHero : turkishHero)) {
+        if (data) {
             setHeroData(lang === 'EN' ? englishHero : turkishHero);
         }
     }, [data, lang]);

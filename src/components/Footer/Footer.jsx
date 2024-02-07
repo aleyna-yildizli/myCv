@@ -38,16 +38,16 @@ export default function Footer({ data }) {
           </span>
           <ul className="flex items-center gap-4">
             {links &&
-              links.map((link, index) => (
+              links.map((link) => (
                 <li
-                  key={index}
+                  key={link.id}
                   className={`xl:text-[18px] md:text-[12px] text-[10px] font-semibold cursor-pointer ${
                     isDarkMode === 'dark'
-                      ? link.text.dark
-                      : link.text.light
+                      ? link.dark
+                      : link.light
                   }`}
                 >
-                  {link.text.content}
+                  {link.content}
                 </li>
               ))}
           </ul>

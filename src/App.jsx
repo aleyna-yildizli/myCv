@@ -19,29 +19,33 @@ function App() {
   const isDarkMode = useSelector((state) => state.theme);
 
   const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
-  const [ data, loading, error ] = useAxios(url);
+  const [ data, loading ] = useAxios(url);
 
   if (loading) {
-    return <div className='flex items-center justify-center mx-auto custom_loading'><PacmanLoader color="#36d7b7" /></div>;
-}
+    return (
+      <div className='flex items-center justify-center mx-auto custom_loading'>
+      <PacmanLoader color="#36d7b7" />
+      </div>
+    );
+  }
 
 
   return (
   
     <div className={`w-full ${isDarkMode === "light" ? 'bg-white' : 'dark bg-[#252128]'}`}>
     <div className="container mx-auto dark:bg-[#252128]">
-      <ModeSwitch data={data} loading={loading} error={error}/>
+      <ModeSwitch data={data}/>
       <Header />
-      <Hero data={data} loading={loading} error={error}/>
-      <Skills data={data} loading={loading} error={error} />
+      <Hero data={data} />
+      <Skills data={data}  />
       <div className="w-full h-[1px] bg-gray-300 my-4"></div>
-      <Profile data={data} loading={loading} error={error}/>
+      <Profile data={data} />
       <div className="w-full h-[1px] bg-gray-300 my-4"></div>
-      <Projects data={data} loading={loading} error={error}/>
+      <Projects data={data} />
       <div className="mt-4"></div>
     
     </div>  
-      <Footer data={data} loading={loading} error={error}/>
+      <Footer data={data}/>
   </div>
   )
 }

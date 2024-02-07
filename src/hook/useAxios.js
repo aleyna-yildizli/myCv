@@ -14,7 +14,7 @@ const useAxios = (url) => {
                 const response = await axios.get(url);
                 setTimeout(() => {
                     setData(response.data);
-                }, 500);
+                }, 400);
                 setLoading(false);
             } catch (error) {
                 setError(error);

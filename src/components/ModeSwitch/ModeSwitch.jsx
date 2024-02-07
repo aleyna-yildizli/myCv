@@ -15,6 +15,9 @@ export default function ModeSwitch ({data}) {
     const [isLanguage, setIsLanguage] = useLocalStorage("language", 'EN');
 
 
+    const themeText = isTheme === "dark" ? "LIGHT MODE" : "DARK MODE";
+    const languageText = isLanguage === "EN" ? "TÜRKÇE" : "İNGİLİZCE";
+
 
     const toggleTheme = () => {
         setIsTheme(isTheme === "light" ? "dark" : "light");
@@ -42,13 +45,13 @@ export default function ModeSwitch ({data}) {
                         onChange={toggleTheme}
                     />
                  <span className="mx-3">
-                {isTheme === "dark" ? "LIGHT MODE" : "DARK MODE"}
+                    {themeText}
                 </span>
                 </div>
                     |
                     <button onClick={handleChangeLanguage}>
                         <span className="text-[#4731D3] cursor-pointer dark:text-[#BAB2E7s]">
-                            {isLanguage === "EN" ? "TÜRKÇE" : "İNGİLİZCE"}
+                        {languageText}
                         </span>
                         <span className="text-[#777777] cursor-pointer " >'YE GEÇ</span>
                     </button>

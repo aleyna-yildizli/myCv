@@ -15,7 +15,7 @@ export default function ProjectItem({data}) {
   const turkishProject = data[1]?.tr?.projects || [];
 
   useEffect(() => {
-    if (data) {
+    if (data && lang) {
       setProjectData(lang === 'EN' ? englishProject : turkishProject);
     }
   }, [data, lang]);

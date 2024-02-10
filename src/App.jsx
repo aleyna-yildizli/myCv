@@ -20,6 +20,7 @@ function App() {
 
   const url = "https://65bfb6c325a83926ab958094.mockapi.io/api/v1/data";
   const [ data, loading ] = useAxios(url);
+  console.log(data);
 
   if (loading) {
     return (

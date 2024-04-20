@@ -1,4 +1,4 @@
-import { TOGGLE_THEME, TOGGLE_LANGUAGE, SET_DATA } from './action.js';
+import { TOGGLE_THEME, TOGGLE_LANGUAGE, FETCH_SUCCESS, FETCH_LOADING} from './action.js';
 
 const localTheme = localStorage.getItem('theme');
 const localLanguage = localStorage.getItem('language');
@@ -7,7 +7,8 @@ const localLanguage = localStorage.getItem('language');
 const initialState = {
     theme: localTheme !== null ? JSON.parse(localTheme) : "light",
     language: localLanguage === null ? "EN" : JSON.parse(localLanguage),
-    data: []
+    data: [],
+    loading: true,
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,10 +23,18 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 language: state.language === "EN" ? "TR" : "EN",
             };
-        case SET_DATA: 
+        case FETCH_SUCCESS: 
             return {
                 ...state,
-                data: action.payload,
+                data: {
+                    en: action.payload.en,
+                    tr: action.payload.tr
+                }
+            }
+        case FETCH_LOADING:
+            return {
+                ...state,
+                loading: action.payload
             }
 
         default:

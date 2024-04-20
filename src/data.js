@@ -11,11 +11,11 @@
         ],
         "skills": [
           {
-            "title": "JavaScript",
-            "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "title": "Front-End",
+            "description": "HTML CSS JavaScript React Js Redux TailwindCSS Bootstrap APIs"
           },
           {
-            "title": "React Js",
+            "title": "Back-End",
             "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           },
           {
@@ -117,9 +117,9 @@
             }
           ]
         }
-      }
-    },
-    {
+      },
+    ●
+    
       "tr": {
         "hero": [
           {
@@ -237,6 +237,8 @@
             }
           ]
         }
-      }
+      },
+      "id": "1"
+
     }
   ]

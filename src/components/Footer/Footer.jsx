@@ -1,29 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { BiSolidHandRight } from "react-icons/bi";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 export default function Footer({ data }) {
   const isDarkMode = useSelector((state) => state.theme);
   const lang = useSelector((state) => state.language);
 
-  const [footerData, setFooterData] = useState({}); 
+  const [footerData, setFooterData] = useState({});
 
-  const englishFooter = data[0]?.en?.footer; 
-  const turkishFooter = data[1]?.tr?.footer; 
+  const englishFooter = data[0]?.en?.footer;
+  const turkishFooter = data[1]?.tr?.footer;
 
   useEffect(() => {
     if (data) {
-      setFooterData(lang === 'EN' ? englishFooter : turkishFooter);
+      setFooterData(lang === "EN" ? englishFooter : turkishFooter);
     }
   }, [data, lang]);
-
 
   const { text, email, links } = footerData || {};
 
   return (
     <div className="bg-gray-100 dark:bg-[#141414] ">
-       <div className="mx-auto xl:h-[251px] lg:h-[211px] md:h-[181px] h-[150px]">
-       <div className="flex flex-col gap-2 justify-center xl:p-[60px] lg:p-[40px] md:p-[30px] p-[20px]">
+      <div className="mx-auto xl:h-[251px] lg:h-[211px] md:h-[181px] h-[150px]">
+        <div className="flex flex-col gap-2 justify-center xl:p-[60px] lg:p-[40px] md:p-[30px] p-[20px]">
           {text && (
             <span className="xl:text-[42px] lg:text-2xl md:text-xl text-base font-semibold dark:text-[#AEBCCF]">
               {text.first} <br />
@@ -41,9 +40,7 @@ export default function Footer({ data }) {
                 <li
                   key={link.id}
                   className={`xl:text-[18px] md:text-[12px] text-[10px] font-semibold cursor-pointer ${
-                    isDarkMode === 'dark'
-                      ? link.dark
-                      : link.light
+                    isDarkMode === "dark" ? link.dark : link.light
                   }`}
                 >
                   {link.content}
@@ -55,4 +52,3 @@ export default function Footer({ data }) {
     </div>
   );
 }
-

@@ -42,24 +42,28 @@ export default function Hero({ data }) {
             </p>
           )}
           <div className="flex items-center xl:gap-3 md:gap-2 gap-1 bottom-1 left-0 font-semibold">
-            <Link
-              className=" bg-indigo-800 text-white xl:px-8 xl:py-2 lg:px-5 lg:py-1 px-4 py-1 rounded dark:text-black dark:bg-[#E1E1FF]"
-              to="mailto:aleynayildizli@gmail.com"
+            <a
+              className=" bg-indigo-800 text-white xl:px-8 xl:py-2 lg:px-5 lg:py-1 px-4 py-1 rounded dark:text-black dark:bg-[#E1E1FF] hover:scale-105"
+              href="mailto:aleynayildizli@gmail.com"
             >
               Hire me
-            </Link>
-            <Link
-              to="https://github.com/aleyna-yildizli"
-              className="flex items-center gap-2  xl:px-5 xl:py-2 px-2 py-1 rounded border border-indigo-800 text-indigo-800 dark:bg-[#383838] dark:text-[#E1E1FF]"
+            </a>
+            <a
+              href="https://github.com/aleyna-yildizli"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2  xl:px-5 xl:py-2 px-2 py-1 rounded border border-indigo-800 text-indigo-800 dark:bg-[#383838] dark:text-[#E1E1FF] hover:scale-105"
             >
               <IoLogoGithub className="dark:text-[#BAB2E7]" /> Github
-            </Link>
-            <Link
-              className="flex items-center gap-2  xl:px-5 xl:py-2 px-2 py-1 rounded border  border-indigo-800 text-indigo-800 dark:bg-[#383838] dark:text-[#E1E1FF]"
-              to="https://www.linkedin.com/in/aleynayldizli"
+            </a>
+            <a
+              className="flex items-center gap-2  xl:px-5 xl:py-2 px-2 py-1 rounded border  border-indigo-800 text-indigo-800 dark:bg-[#383838] dark:text-[#E1E1FF] hover:scale-105"
+              href="https://www.linkedin.com/in/aleynayldizli"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaLinkedinIn className="dark:text-[#BAB2E7]" /> Linkedin
-            </Link>
+            </a>
           </div>
         </div>
         <div className="hero_image_card w-full h-full relative ">

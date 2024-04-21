@@ -15,7 +15,10 @@ export default function Skills({ data }) {
   }, [data, lang]);
 
   return (
-    <div className="flex flex-col xl:gap-4 md:gap-2 gap-1 w-full xl:mt-20 xl:mb-20 lg:mt-6 lg:mb-6 md:mt-3 md:mb-3 mt-2 mb-1">
+    <div
+      id="skills"
+      className="flex flex-col xl:gap-4 md:gap-2 gap-1 w-full xl:mt-20 xl:mb-20 lg:mt-6 lg:mb-6 md:mt-3 md:mb-3 mt-2 mb-1"
+    >
       <h2 className="xl:text-[48px] lg:text-[40px] md:text-[32px] text-[24px]  font-bold dark:text-[#AEBCCF]">
         Skills
       </h2>

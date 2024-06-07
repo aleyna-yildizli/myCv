@@ -16,7 +16,7 @@ body {
 
 
 
-@media screen and (max-width:1440px){
+@media screen and (max-width:1440px) {
   .container {
    padding-left: 5rem;
    padding-right: 7rem;
@@ -38,13 +38,8 @@ body {
     padding-left: 2rem;
     padding-right: 3.5rem;
    }
-   .hero_image {
-    display: none;
-   }
-   .profile-section2 {
-    flex: none;
-    width: 90vw;
-   }
+
+
 }
 @media screen and (max-width:768px){
   .container {
@@ -52,13 +47,8 @@ body {
     padding-right: 2.5rem;
     
    }
-   .hero_image {
-    display: none;
-   }
-   .profile-section2 {
-    flex: none;
-    width: 90vw;
-   }
+ 
+
 }
 @media screen and (max-width:576px){
  
@@ -66,16 +56,6 @@ body {
     padding-left: 0.75rem;
     padding-right: 1.25rem;
    }
-
-   .hero_image {
-    display: none;
-   }
-
-   .profile-section2 {
-    flex: none;
-    width: 90vw;
-   }
-
 }
 
 

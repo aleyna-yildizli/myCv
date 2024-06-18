@@ -13,9 +13,6 @@ body {
 @tailwind utilities;
 
 
-
-
-
 @media screen and (max-width:1440px) {
   .container {
    padding-left: 5rem;

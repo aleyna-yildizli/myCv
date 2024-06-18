@@ -71,7 +71,10 @@ export default function ProjectItem({ data }) {
       <h2 className="xl:text-[48px] lg:text-[40px] md:text-[32px] text-[24px] font-bold dark:text-[#AEBCCF] xl:mb-5 lg:mb-3 md:mb-2 mb-1">
         Projects
       </h2>
-      <Slider {...settings} className="flex justify-between gap-20 sm:gap-2">
+      <Slider
+        {...settings}
+        className="flex justify-between gap-20 sm:gap-2 slider-container"
+      >
         {projectData.map((project, index) => (
           <div
             key={index}

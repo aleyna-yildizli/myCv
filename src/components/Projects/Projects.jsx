@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Slider from "react-slick";
 import "./style.css";
 
 export default function ProjectItem({ data }) {
@@ -30,21 +31,51 @@ export default function ProjectItem({ data }) {
       github: "https://github.com/aleyna-yildizli/aleyna-ecommerce",
       view: "https://piggybank.aleynayildizli.com/",
     },
+    {
+      github: "https://github.com/aleyna-yildizli/personal-debt-tracker",
+      view: "https://personal-debt-tracker.vercel.app/",
+    },
   ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <div
       id="projects"
-      className="flex flex-col gap-4  w-full xl:mt-20 xl:mb-40 lg:mt-10 lg:mb-20 md:mt-5 md:mb-10 mt-2 mb-5"
+      className="flex flex-col gap-4 w-full xl:mt-20 xl:mb-40 lg:mt-10 lg:mb-20 md:mt-5 md:mb-10 mt-2 mb-5"
     >
-      <h2 className="xl:text-[48px] lg:text-[40px] md:text-[32px] text-[24px]  font-bold dark:text-[#AEBCCF] xl:mb-5 lg:mb-3 md:mb-2 mb-1">
+      <h2 className="xl:text-[48px] lg:text-[40px] md:text-[32px] text-[24px] font-bold dark:text-[#AEBCCF] xl:mb-5 lg:mb-3 md:mb-2 mb-1">
         Projects
       </h2>
-      <div className="flex flex-wrap justify-between gap-20 sm:gap-2">
+      <Slider {...settings} className="flex justify-between gap-20 sm:gap-2">
         {projectData.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col xl:w-[23%] lg:w-[30%] md:w-[45%] w-full"
+            className="flex flex-col xl:w-[23%] lg:w-[30%] md:w-[45%] w-full px-2"
           >
             <img
               className="h-[250px] w-full object-cover"
@@ -57,7 +88,7 @@ export default function ProjectItem({ data }) {
               </h3>
             )}
             {project.info && (
-              <p className="text-[14px]  text-gray-800 dark:text-white">
+              <p className="text-[14px] text-gray-800 dark:text-white">
                 {project.info}
               </p>
             )}
@@ -98,7 +129,7 @@ export default function ProjectItem({ data }) {
             </div>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 }
